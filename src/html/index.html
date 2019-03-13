@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>jQuery.Gantt</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=IE8">
+    <link href="../css/style.css" type="text/css" rel="stylesheet">
+    <link href="../css/custom.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="scale">
+        <select>
+          <option value="days">Days</option>
+          <option value="weeks">Weeks</option>
+          <option value="months">Months</option>
+        </select>
+      </div>
+      <div class="gantt"></div>
+    </div>
+
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.fn.gantt.js"></script>
+    <script src="../js/data.js"></script>
+
+    <script>
+
+      $(function() {
+
+        $('.gantt').gantt({
+          source: data,
+          scale: 'months',
+          minScale: 'days',
+          maxScale: 'months',
+          navigate: 'scroll',
+          itemsPerPage: 20,
+          scrollToToday: true,
+          dow: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+          daysScaleCellWidth: 28,
+          weeksScaleCellWidth: 36,
+          monthsScaleCellWidth: 75,
+          taskBarHeight: 10,
+
+          // callbacks
+          onItemClick: function (data) { return; },
+          onAddClick: function (dt, rowId) { return; },
+          onRender: function () {
+            $('.custom_days .row.date').parent().addClass('custom_DScale_dates');
+            $('.custom_days .row.day').parent().addClass('custom_DScale_days');
+            $('.row.day').find('.custom_grid').remove();
+            $('.row.day').append('<div class="custom_grid"></div>');
+          }
+        });
+
+      });
+
+    </script>
+
+  </body>
+</html>
