@@ -238,4 +238,24 @@ var data = [{
     customClass: "ganttFact",
     isLower: true
   }]
+},{
+  name: "Warranty Period",
+  desc: "Description Warranty Period",
+  dataObj: {
+    budget: '3000.00',
+    owner: 'Superviser19',
+    contractor: 'Victori&Co'
+  },
+  values: [{
+    from: "2019-06-22",
+    to: "2019-07-15",
+    label: "Planned time UTC",
+    customClass: "ganttPlanned"
+  }, {
+    from: "2019-06-25",
+    to: "2019-07-21",
+    label: "Fact time UTC",
+    customClass: "ganttFact",
+    isLower: true
+  }]
 }];

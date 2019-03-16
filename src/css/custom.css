@@ -5,9 +5,8 @@
 .fn-gantt .custom_days .day {
 	line-height: 11px;
 }
-.fn-gantt .custom_days .date.row, .fn-gantt .custom_DScale_dates.row {
-	height: 20px;
-	line-height: 15px;
+.fn-gantt .custom_days .day {
+	line-height: 11px;
 }
 .fn-gantt .custom_DScale_days.row, .fn-gantt .custom_days .day.row {
 	height: 18px;
@@ -15,6 +14,11 @@
 .fn-gantt .custom_days .date.row {
 	padding-top: 5px;
 	height: 20px;
+	line-height: 15px;
+}
+.fn-gantt .custom_days .custom_DScale_dates {
+	height: 20px;
+	line-height: 15px;
 }
 .fn-gantt .dataPanel {
 	background-image: none;
@@ -26,17 +30,17 @@
 	background-color: initial;
 }
 .fn-gantt .custom_days .day, .fn-gantt .custom_days .date {
-	width: 28px;
+	width: auto;
 }
 .fn-gantt .custom_months .day {
-	width: 75px;
+	width: auto;
 	font-size: 12px;
 }
 .fn-gantt .rightPanel .year, .fn-gantt .rightPanel .month {
 	font-size: 12px;
 }
 .fn-gantt .custom_weeks .day {
-	width: 36px;
+	width: auto;
 }
 
 /* Pseudo-Grid styles */
@@ -172,9 +176,12 @@
 	border-top: 2px solid #ddd;
 	border-radius: initial;
 }
+.gantt .row {
+	display: block;
+}
 
 .container {
-	width: 80%;
+	width: 50%;
 	margin: 0 auto;
 	border: 2px solid #ddd;
 }
@@ -183,5 +190,15 @@
 }
 .scale select {
 	padding: 3px 5px;
-	outline: none;	
+	outline: none;
+	width: 85px;
+	height: 23px;
+	-webkit-appearance: menulist;
+	background: none;
+}
+body {
+	overflow-y: overlay;
+}
+.fn-gantt .rightPanel {
+	overflow-x: scroll;
 }
