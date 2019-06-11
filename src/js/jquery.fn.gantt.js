@@ -304,9 +304,10 @@
                 // Scroll the grid to today's date
                 var viewportOffset = $(viewport).offset().left;
                 var viewportHalfWidth = $(viewport).width() / 2;
-                var todayElementOffset = $(scrollable).find(".today").offset().left - viewport.scrollLeft;
+                var todayElementOffset;
 
                 if (settings.scrollToToday && $dataPanel.find(".today").length) {
+                    todayElementOffset = $(scrollable).find(".today").offset().left - viewport.scrollLeft;
                     core._tempScrollBoosterObj.setPosition({
                         x: (todayElementOffset - viewportOffset) - viewportHalfWidth
                     });
@@ -1061,20 +1062,38 @@
                             '<p>' + factTiming + '</p>' +
                         '</div>';
 
+                    var alignHint = function(e) {
+
+                        var hint = $(".fn-gantt-hint");
+                        var hintRect = hint[0].getBoundingClientRect();
+
+                        if (e.pageX + hintRect.width > window.innerWidth) {
+                            hint.css("left", e.pageX - hintRect.width);
+                        } else {
+                            hint.css("left", e.pageX);
+                        }
+
+                        if (e.pageY + hintRect.height + 15 > window.innerHeight) {
+                            hint.css("top", e.pageY - hintRect.height - 15);
+                        } else {
+                            hint.css("top", e.pageY + 15);
+                        }
+
+                    };
+
                     bar
                       .mouseenter(function (e) {
                           var hint = $('<div class="fn-gantt-hint" />').html(popupHTML);
                           $("body").append(hint);
-                          hint.css("left", e.pageX);
-                          hint.css("top", e.pageY + 15);
                           hint.show();
+
+                          alignHint(e);
                       })
                       .mouseleave(function () {
                           $(".fn-gantt-hint").remove();
                       })
-                      .mousemove(function (e) {
-                          $(".fn-gantt-hint").css("left", e.pageX);
-                          $(".fn-gantt-hint").css("top", e.pageY + 15);
+                      .mousemove(function (e) {                          
+                          alignHint(e);
                       });
                 }
 
