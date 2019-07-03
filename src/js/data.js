@@ -1,6 +1,6 @@
 var data = [{
   name: "Sprint 0",
-  desc: "Description Sprint 0",
+  desc: "", //"Description Sprint 0",
   dataObj: {
     budget: '3000.00',
     owner: 'Superviser19',
@@ -20,7 +20,7 @@ var data = [{
   }]
 },{
   name: "Sprint 1",
-  desc: "Description Sprint 1",
+  desc: "", //"Description Sprint 1",
   dataObj: {
     budget: '3000.00',
     owner: 'Superviser19',
@@ -257,5 +257,86 @@ var data = [{
     label: "Fact time UTC",
     customClass: "ganttFact",
     isLower: true
+  }]
+}];
+var altSource = [{
+  "name": "New test title task12111812",
+  "desc": "ffdsfds sd sdf sdsd f",
+  "dataObj": {
+    "budget": "1500.00",
+    "owner": "Supervisor",
+    "contractor": "Aleks Test "
+  },
+  "values": [{
+    "from": "2019-07-03",
+    "to": "2019-08-07",
+    "label": "Planned time UTC",
+    "customClass": "ganttPlanned"
+  }, {
+    "from": "2019-06-24",
+    "to": "",
+    "label": "Fact time UTC",
+    "customClass": "ganttFact",
+    "isLower": true
+  }]
+}, {
+  "name": "4324234234",
+  "desc": "rfeerf",
+  "dataObj": {
+    "budget": "2343.00",
+    "owner": "33333333",
+    "contractor": "Den"
+  },
+  "values": [{
+    "from": "2019-06-28",
+    "to": "2019-06-28",
+    "label": "Planned time UTC",
+    "customClass": "ganttPlanned"
+  }, {
+    "from": "2019-06-08",
+    "to": "",
+    "label": "Fact time UTC",
+    "customClass": "ganttFact",
+    "isLower": true
+  }]
+}, {
+  "name": "task2903N",
+  "desc": "",
+  "dataObj": {
+    "budget": "500.00",
+    "owner": "mm ",
+    "contractor": "Garry"
+  },
+  "values": [{
+    "from": "2019-03-29",
+    "to": "2019-03-30",
+    "label": "Planned time UTC",
+    "customClass": "ganttPlanned"
+  }, {
+    "from": "2019-03-29",
+    "to": "2019-04-09",
+    "label": "Fact time UTC",
+    "customClass": "ganttFact",
+    "isLower": true
+  }]
+}, {
+  "name": "task28032",
+  "desc": "",
+  "dataObj": {
+    "budget": "1050.00",
+    "owner": "mm ",
+    "contractor": null
+  },
+  "values": [{
+    "from": "2019-03-28",
+    "to": "2019-03-31",
+    "label": "Planned time UTC",
+    "customClass": "ganttPlanned"
+  }, {
+    "from": "2019-03-28",
+    "to": "",
+    "label": "Fact time UTC",
+    "customClass": "ganttFact",
+    "isLower": true
   }]
 }];

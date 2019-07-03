@@ -1044,7 +1044,7 @@
                     .addClass(subentry.customClass || '');
 
                 // We show popup if there is description present
-                if (entry.desc) {
+                //if (entry.desc) {
 
                     popupHTML =
                         '<div class="hint_desc">' + entry.desc + '</div>' +
@@ -1095,7 +1095,7 @@
                       .mousemove(function (e) {                          
                           alignHint(e);
                       });
-                }
+                //}
 
                 bar.click(function (e) {
                     e.stopPropagation();

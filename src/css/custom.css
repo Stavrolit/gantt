@@ -159,6 +159,7 @@
 	font-size: 12px;
 	line-height: 12px;
 	height: 15px;
+	overflow: visible;
 }
 .day.today, .date.today {
 	color: rgb(46, 128, 235);
