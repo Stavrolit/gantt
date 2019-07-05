@@ -189,6 +189,7 @@
         // read options
         $.extend(settings, options);
 
+
         // can't use cookie if don't have `$.cookie`
         settings.useCookie = settings.useCookie && $.isFunction($.cookie);
 
@@ -224,6 +225,16 @@
                 // request depending on `settings.source`
                 if (typeof settings.source !== "string") {
                     element.data = settings.source;
+                    element.data.forEach(function(elem) {
+                        if (typeof elem.values === 'object') {
+                            elem.values.forEach(function(elem2) {
+                                if (elem2.label === 'Fact time UTC' && elem2.from && !elem2.to) {
+                                    var now = new Date();
+                                    elem2.to = now.toISOString().replace(/T.*$/, '');
+                                }
+                            })
+                        }
+                    });
                     core.init(element);
                 } else {
                     $.getJSON(settings.source, function (jsData) {
